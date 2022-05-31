@@ -1,0 +1,37 @@
+import random
+lista = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+escolhido = random.choice(lista)
+lista = int
+cont = 0
+continuar = 'SIM' or 'NÃO'
+pergunta = int(input('Qual o número desejado entre 1 e 10?:'))
+print(escolhido, pergunta)
+while escolhido != pergunta:
+    if continuar == 'SIM':
+        denovo = int(input('Por favor tente novamente:'))
+        cont += 1
+        if denovo == escolhido:
+            print('Parabéns! Você demorou {} tentavivas para acertar a escolha do PC.'.format(cont))
+            continuar = str(input('Vai querer continuar, SIM ou NÃO?:').upper())
+            if continuar == 'NÃO':
+                print('Acabou!')
+######################
+from random import randint
+computador = randint(0, 10)
+print('Olá eu sou seu computador.. Acabei de pensar em um número entre 0 e 10.')
+print('Será que você consegue adivnhar?')
+acertou = False
+palpites = 0
+while not acertou:
+    jogador = int(input('Qual o seu palpite?'))
+    palpites += 1
+    if jogador == computador:
+        acertou = True
+    else:
+        if jogador < computador:
+            print('Mais...')
+        elif jogador > computador:
+            print('Menos...')
+print('Você acertou, depois de {} tentativas.'.format(palpites))
+
+
